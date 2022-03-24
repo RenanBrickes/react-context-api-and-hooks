@@ -30,7 +30,7 @@ const asyncError = async (dispatch) => {
     return await new Promise((resolver, reject) => {
         setTimeout(() => {
             dispatch({ type: ASYNC_INCREASE_ERROR });
-            reject(new Error('REJECT'));
+            reject(new Error('Erro simulando uma promise rejeitada.'));
         }, 2000)
     });
 }

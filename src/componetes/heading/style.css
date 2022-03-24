@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    justify-content: center;
+}
+
+.contador {
+    font-size: 25px;
+    color: grey;
+    text-align: center;
+}
+

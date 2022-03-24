@@ -1,8 +1,8 @@
 import p from 'prop-types'
-
-export const Button = ({ children, buttonClick }) => {
+import './styles.css';
+export const Button = ({ children, buttonClick, estilo }) => {
     return (
-        <button onClick={buttonClick} >
+        <button className={estilo}  onClick={buttonClick} >
             {children}
         </button>
     );
