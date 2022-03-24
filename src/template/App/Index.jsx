@@ -1,15 +1,14 @@
-import { useEffect } from 'react';
+import { Button } from '../../componetes/Button';
+import { Heading } from '../../componetes/heading';
 import { useCounterContext } from '../../context/CounterContext/index'
 
 export const App = () => {
   const [state, action] = useCounterContext();
-
-  useEffect(() => {
-    action.increase();
-  }, [action])
-
   return <div>
-    <button onClick={() => action.increase()} >INCREMENTE</button>
+    <Heading />
+    <div>
+      <Button buttonClick={() => action.increase()}>Incrementar</Button>
+    </div>
   </div>
 }
 
