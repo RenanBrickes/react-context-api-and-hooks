@@ -1,4 +1,5 @@
-import { ASYNC_INCREASE_END, ASYNC_INCREASE_ERROR, ASYNC_INCREASE_START, DECREASE, INCRASE, RESET, SETCOUNTER } from "./actions-types";
+import { number } from "prop-types";
+import { ASYNC_INCREASE_END, ASYNC_INCREASE_ERROR, ASYNC_INCREASE_START, DECREASE, INCRASE, RESET, SETCOUNTER, SETMORE } from "./actions-types";
 import { initialState } from './index'
 
 export const reducer = (state, action) => {
@@ -11,7 +12,10 @@ export const reducer = (state, action) => {
         case RESET:
             return { ...initialState }
         case SETCOUNTER:
-            return { ...state, ...action.playload }
+            return { ...state, ...action.payload }
+        case SETMORE:
+            // console.log(action.number);
+            return { ...state, counter: state.counter + action.number }
         case ASYNC_INCREASE_START:
             return { ...state, loading: true }
         case ASYNC_INCREASE_END:
